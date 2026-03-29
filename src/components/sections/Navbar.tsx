@@ -34,15 +34,18 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/">
           <TiltWrapper intensity={5}>
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-2xl font-serif font-bold tracking-widest text-gold cursor-pointer"
-              onMouseEnter={() => playSound('hover')}
-              onClick={() => playSound('click')}
-            >
-              VELOURA
-            </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="flex items-center gap-3 cursor-pointer group"
+                onMouseEnter={() => playSound('hover')}
+                onClick={() => playSound('click')}
+              >
+                <div className="w-10 h-10 overflow-hidden rounded-full border border-gold/30 group-hover:border-gold transition-colors duration-500">
+                  <img src="/logo.png" alt="Veloura Logo" className="w-full h-full object-cover scale-150" />
+                </div>
+                <span className="text-2xl font-serif font-bold tracking-[0.2em] text-gold">VELOURA</span>
+              </motion.div>
           </TiltWrapper>
         </Link>
 
