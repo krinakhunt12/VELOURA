@@ -42,7 +42,7 @@ export const Navbar = () => {
                 onClick={() => playSound('click')}
               >
                 <div className="w-10 h-10 overflow-hidden rounded-full border border-gold/30 group-hover:border-gold transition-colors duration-500">
-                  <img src="/logo.png" alt="Veloura Logo" className="w-full h-full object-cover scale-150" />
+                  <img src="/logo.png" alt="Veloura Logo" className="w-full h-full object-cover scale-110" />
                 </div>
                 <span className="text-2xl font-serif font-bold tracking-[0.2em] text-gold">VELOURA</span>
               </motion.div>
@@ -119,26 +119,54 @@ export const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-dark/95 backdrop-blur-xl overflow-hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-40 md:hidden bg-dark/98 backdrop-blur-2xl flex flex-col items-center justify-center"
           >
-            <div className="flex flex-col items-center py-8 space-y-6">
-              {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  to={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={cn(
-                    "text-lg uppercase tracking-widest",
-                    location.pathname === link.href ? "text-gold" : "text-white"
-                  )}
+            <div className="flex flex-col items-center space-y-8">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 + 0.2 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link 
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    onMouseEnter={() => playSound('hover')}
+                    className={cn(
+                      "text-3xl font-serif tracking-widest transition-colors duration-300",
+                      location.pathname === link.href ? "text-gold" : "text-white hover:text-gold"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
+              
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="pt-12"
+              >
+                <Link to="/reservations" onClick={() => setIsMobileMenuOpen(false)}>
+                  <button className="bg-gold text-dark px-12 py-4 rounded-full text-sm font-bold uppercase tracking-widest shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                    Book a Table
+                  </button>
+                </Link>
+              </motion.div>
             </div>
+            
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="absolute top-8 right-8 text-white p-2"
+            >
+              <X size={32} />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

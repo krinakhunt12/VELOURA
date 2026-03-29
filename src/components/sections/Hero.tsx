@@ -74,20 +74,20 @@ export const Hero = () => {
         </motion.p>
         <motion.h1
           variants={itemVariants}
-          className="text-6xl md:text-8xl font-serif mb-8 leading-tight"
+          className="text-4xl sm:text-6xl md:text-8xl font-serif mb-8 leading-tight px-2"
         >
           A Taste of <span className="italic text-gradient">Luxury</span>
         </motion.h1>
         <motion.div
   variants={itemVariants}
-  className="flex flex-col md:flex-row items-center justify-center gap-6"
+  className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
 >
-  <TiltWrapper intensity={10}>
-    <Link to="/reservations">
+  <TiltWrapper intensity={10} className="w-full sm:w-auto">
+    <Link to="/reservations" className="block w-full sm:w-auto">
       <button 
         onMouseEnter={() => playSound('hover')}
         onClick={() => playSound('click')}
-        className="group relative px-8 py-4 bg-gold text-dark font-bold uppercase tracking-widest overflow-hidden transition-all duration-500 rounded-sm"
+        className="w-full sm:w-auto group relative px-8 py-4 bg-gold text-dark font-bold uppercase tracking-widest overflow-hidden transition-all duration-500 rounded-sm"
       >
         <span className="relative z-10 group-hover:text-gold transition-colors duration-500">Book a Table</span>
         <div className="absolute inset-0 bg-dark translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -95,12 +95,12 @@ export const Hero = () => {
       </button>
     </Link>
   </TiltWrapper>
-  <TiltWrapper intensity={10}>
-    <Link to="/menu">
+  <TiltWrapper intensity={10} className="w-full sm:w-auto">
+    <Link to="/menu" className="block w-full sm:w-auto">
       <button 
         onMouseEnter={() => playSound('hover')}
         onClick={() => playSound('click')}
-        className="group relative px-8 py-4 border border-white/30 hover:border-gold transition-all duration-500 font-bold uppercase tracking-widest rounded-sm overflow-hidden"
+        className="w-full sm:w-auto group relative px-8 py-4 border border-white/30 hover:border-gold transition-all duration-500 font-bold uppercase tracking-widest rounded-sm overflow-hidden"
       >
         <span className="relative z-10 group-hover:text-dark transition-colors duration-500">View Menu</span>
         <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
