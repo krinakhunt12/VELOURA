@@ -22,7 +22,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$22',
     description: 'Salt-crusted beets, goat cheese mousse, and balsamic pearls.',
     category: 'Starters',
-    image: 'https://images.unsplash.com/photo-1546793665-c74683c3f38d?auto=format&fit=crop&q=80&w=800'
+    image: 'https://i.pinimg.com/736x/9c/bc/74/9cbc744400fe0335e1a42b10a6f42fd1.jpg'
   },
   {
     id: '9',
@@ -46,7 +46,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$19',
     description: 'Honey-soy glaze, sesame seeds, and spring onions.',
     category: 'Starters',
-    image: 'https://images.unsplash.com/photo-1625938140722-26159539958a?auto=format&fit=crop&q=80&w=800'
+    image: 'https://i.pinimg.com/1200x/ca/de/1d/cade1d94c0e1db34e1393f79793e7719.jpg'
   },
   {
     id: '18',
@@ -78,7 +78,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$42',
     description: 'Stacked aubergine, buffalo mozzarella, and rich San Marzano sauce.',
     category: 'Main Course',
-    image: 'https://images.unsplash.com/photo-1625860511213-3561664cdaca?auto=format&fit=crop&q=80&w=800'
+    image: 'https://i.pinimg.com/1200x/c9/45/e8/c945e8af9f85514dfb148a8ed148fe5b.jpg'
   },
   {
     id: '4',
@@ -198,7 +198,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$14',
     description: 'Elegant French rosé with notes of strawberry and cream.',
     category: 'Drinks',
-    image: 'https://images.unsplash.com/photo-1558001239-5262ad893932?auto=format&fit=crop&q=80&w=800'
+    image: 'https://i.pinimg.com/736x/23/aa/2f/23aa2ff087c100776236c04708e1f5e4.jpg'
   }
 ];
 
