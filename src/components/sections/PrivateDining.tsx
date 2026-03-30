@@ -54,7 +54,7 @@ export const PrivateDining = () => {
               className="relative z-10 rounded-3xl overflow-hidden shadow-2xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1550966842-28c2e202ec91?auto=format&fit=crop&q=80&w=1200" 
+                src="https://i.pinimg.com/736x/7e/53/89/7e53895ea3fbc0683bddd0adf6d6e0e9.jpg" 
                 alt="Private Event Space"
                 className="w-full h-[500px] object-cover"
                 referrerPolicy="no-referrer"
